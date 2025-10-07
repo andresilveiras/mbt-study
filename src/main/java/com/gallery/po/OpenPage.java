@@ -31,7 +31,7 @@ public class OpenPage extends BasePage {
 
     public AndroidDriver checkPermissionDialog() {
         System.out.println("Checking android dialog...");
-        //System.out.println("first access dialog: " + firstAccessDialogText.isEnabled());
+        System.out.println("first access dialog: " + permissionDialog.isEnabled());
         if (permissionDialog.isDisplayed()) {
             System.out.println("Closing android dialog.");
             allowPermissionButton.click();

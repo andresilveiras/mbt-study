@@ -9,10 +9,10 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 public class OpenPage extends BasePage {
 
     // Driver instanciation
-    public OpenPage(AndroidDriver d) {
-        super(d);
+    public OpenPage(AndroidDriver driver) {
+        super(driver);
         System.out.println("I'm on Open Page");
-        if(d == null){
+        if(driver == null){
             System.out.println("Driver is null");
         }else{
             System.out.println("Driver is NOT null");
@@ -38,6 +38,6 @@ public class OpenPage extends BasePage {
         } else {
             System.out.println("There is no dialog to be closed.");
         }
-        return d;
+        return driver;
     }
 }

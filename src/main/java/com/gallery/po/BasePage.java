@@ -9,10 +9,10 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 
 public class BasePage {
-    protected AndroidDriver d;
+    protected AndroidDriver driver;
     
-    public BasePage(AndroidDriver d) {
-        this.d = d;
-        PageFactory.initElements(new AppiumFieldDecorator(d, Duration.ofSeconds(3600)), this);
+    public BasePage(AndroidDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(60)), this);
     }
 }

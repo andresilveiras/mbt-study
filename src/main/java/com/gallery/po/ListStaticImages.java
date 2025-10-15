@@ -5,12 +5,12 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class ListWebpImages extends BasePage{
+public class ListStaticImages extends BasePage{
 
     // Driver instanciation
-    public ListWebpImages(AndroidDriver driver) {
+    public ListStaticImages(AndroidDriver driver) {
         super(driver);
-        System.out.println("I'm on Folders Page");
+        System.out.println("I'm on a Static Image Folder Page");
         if(driver == null){
             System.out.println("Driver is null");
         }else{
@@ -31,28 +31,28 @@ public class ListWebpImages extends BasePage{
 
     // PAGE ACTIONS
 
-    // Check that is in list Webp page --> Stay in the same page
-    public boolean checkWebpImagesPage(){
-        System.out.println("List Webp Images Page check...");
+    // Check that is in list Static page --> Stay in the same page
+    public boolean checkStaticImagesPage(){
+        System.out.println("List Static Images Page check...");
         return mediaGrid.isDisplayed();
     }
 
     // Check that the grid is not empty --> Stay in the same page
-    public boolean checkWebpItems(){
-        System.out.println("Webp Images Page not empty check...");
+    public boolean checkStaticItems(){
+        System.out.println("Static Images Page not empty check...");
         return firstItem.isDisplayed();
     }
 
     // Click on first item --> Go to STATIC IMAGE OPTIONS
     public StaticImageOptions clickOnFirstItem(){
-        System.out.println("Clicking on first Webp Image...");
+        System.out.println("Clicking on first Static Image...");
         firstItem.click();
         return new StaticImageOptions(driver);
     }
 
     // Go Back --> Go to LIST FOLDERS 
-    public ListFolders goBackFromWebpImages(){
-        System.out.println("Going back from Webp Images");
+    public ListFolders goBackFromStaticImages(){
+        System.out.println("Going back from Static Images");
         backButton.click();
         return new ListFolders(driver);
     }

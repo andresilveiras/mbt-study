@@ -51,27 +51,27 @@ public class ListFolders extends BasePage{
     // ------------------------
 
     // Click on Images JPEG --> Go to LIST JPEG IMAGES
-    public ListJpegImages clickOnJpegFolder(){
+    public ListStaticImages clickOnJpegFolder(){
         System.out.println("Clicking on JPEG Images Folder...");
         folderJpeg.click();
         //driver.pressKey(new KeyEvent(AndroidKey.BACK));
-        return new ListJpegImages(driver);
+        return new ListStaticImages(driver);
     }
 
     // Click on Images PNG --> Go to LIST PNG IMAGES
-    public ListPngImages clickOnPngFolder(){
+    public ListStaticImages clickOnPngFolder(){
         System.out.println("Clicking on PNG Images Folder...");
         folderPng.click();
         //driver.pressKey(new KeyEvent(AndroidKey.BACK));
-        return new ListPngImages(driver);
+        return new ListStaticImages(driver);
     }
 
     // Click on Images WEBP --> Go to LIST WEBP IMAGES
-    public ListWebpImages clickOnWebpFolder(){
+    public ListStaticImages clickOnWebpFolder(){
         System.out.println("Clicking on WEBP Images Folder...");
         folderWebp.click();
         //driver.pressKey(new KeyEvent(AndroidKey.BACK));
-        return new ListWebpImages(driver);
+        return new ListStaticImages(driver);
     }
 
     // ------------------------

@@ -30,7 +30,7 @@ public class Main {
 
             welcomePage.checkPermissionDialog();
             listFolders.checkFoldersPage();
-            listFolders.clickOnStaticImageFolder();
+            //listFolders.clickOnStaticImageFolder();
 
         } catch (MalformedURLException exc) {
             System.out.println(exc.getCause());

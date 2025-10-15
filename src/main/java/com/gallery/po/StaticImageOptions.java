@@ -46,9 +46,14 @@ public class StaticImageOptions extends BasePage{
     // PAGE ACTIONS
 
     // Check that is in Static Image Options Page --> Stay in the same page
-    public boolean checkJpegImagesPage(){
+    public boolean checkStaticImagePage(){
         System.out.println("Static Image Options page check...");
         return imageView.isDisplayed();
+    }
+
+    public void viewFullScreen(){
+        System.out.println("Click on image (Full Screen)");
+        imageView.click();
     }
 
     // Go Back --> Go To Specific Folder

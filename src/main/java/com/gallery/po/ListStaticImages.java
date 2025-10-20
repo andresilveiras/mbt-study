@@ -31,7 +31,7 @@ public class ListStaticImages extends BasePage{
 
     // PAGE ACTIONS
 
-    // Check that is in list Static page --> Stay in the same page
+    // Check that is in List Static Image page --> Stay in the same page
     public boolean checkStaticImagesPage(){
         System.out.println("List Static Images Page check...");
         return mediaGrid.isDisplayed();

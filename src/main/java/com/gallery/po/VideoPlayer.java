@@ -3,6 +3,8 @@ package com.gallery.po;
 import org.openqa.selenium.remote.RemoteWebElement;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class VideoPlayer extends BasePage{
@@ -32,9 +34,6 @@ public class VideoPlayer extends BasePage{
     @AndroidFindBy(id="org.fossify.gallery:id/video_toggle_mute")
     RemoteWebElement muteButton;
 
-    @AndroidFindBy(id="org.fossify.gallery:id/video_seekbar")
-    RemoteWebElement videoSeekBar;
-
     @AndroidFindBy(id="org.fossify.gallery:id/video_curr_time")
     RemoteWebElement videoCurrentTime;
 
@@ -49,11 +48,11 @@ public class VideoPlayer extends BasePage{
     }
 
     public boolean changePlayStatus(boolean isPlaying){
+        // video automatically pauses when video reaches duration time
         System.out.println("Checking if play time is over...");
         String now = videoCurrentTime.getText();
         String duration = videoDurationTime.getText();
         if(now.equals(duration)){
-            isPlaying = false;
             System.out.println("Play time is over. Replaying video...");
             playPauseButton.click();
             isPlaying = true;
@@ -62,17 +61,36 @@ public class VideoPlayer extends BasePage{
             if(isPlaying){
                 System.out.println("Video is playing. Pausing video.");
                 playPauseButton.click();
-                isPlaying = false;
-                return isPlaying;
+                return !isPlaying;
             }else{
                 System.out.println("Video is Paused. Playing video...");
                 playPauseButton.click();
-                isPlaying = true;
-                return isPlaying;
+                return !isPlaying;
             }
         } 
     }
 
-    // TODO: How return to video options?
+    public VideoOptions goBackFromVideoPlayer(){
+        System.out.println("Going back from video player");
+        return new VideoOptions(driver);
+        // video options are still available when video player is open
+    }
 
+    public boolean changeAudioStatus(boolean isMuted){
+        if(isMuted){
+            System.out.println("Video is Muted. Unmuting video...");
+        }else{
+            System.out.println("Video is Unmuted. Muting video...");
+        }
+        muteButton.click();
+        return !isMuted;
+    }
+
+    // TODO: The next actions are only clicking and going back. Need to implement their real actions for complete test scenarios.
+
+    public void changeVideoSpeed(){
+        System.out.println("Changing video speed.");
+        playbackSpeedButton.click();
+        driver.pressKey(new KeyEvent(AndroidKey.BACK)); 
+    }
 }    

@@ -48,8 +48,6 @@ public class VideoOptions extends BasePage{
 
     // PAGE ACTIONS
 
-    // PAGE ACTIONS
-
     // Check that is in Video Options Page --> Stay in the same page
     public boolean checkVideoPage(){
         System.out.println("Video Options page check...");

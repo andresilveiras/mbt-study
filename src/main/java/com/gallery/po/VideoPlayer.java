@@ -12,7 +12,7 @@ public class VideoPlayer extends BasePage{
     // Driver instanciation
     public VideoPlayer(AndroidDriver driver) {
         super(driver);
-        System.out.println("I'm on Folders Page");
+        System.out.println("I'm on Video Player Page");
         if(driver == null){
             System.out.println("Driver is null");
         }else{

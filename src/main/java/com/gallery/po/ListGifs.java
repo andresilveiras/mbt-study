@@ -10,7 +10,7 @@ public class ListGifs extends BasePage{
     // Driver instanciation
     public ListGifs(AndroidDriver driver) {
         super(driver);
-        System.out.println("I'm on Folders Page");
+        System.out.println("I'm on GIF Folder Page");
         if(driver == null){
             System.out.println("Driver is null");
         }else{

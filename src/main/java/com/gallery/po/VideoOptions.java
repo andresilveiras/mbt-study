@@ -12,7 +12,7 @@ public class VideoOptions extends BasePage{
     // Driver instanciation
     public VideoOptions(AndroidDriver driver) {
         super(driver);
-        System.out.println("I'm on Folders Page");
+        System.out.println("I'm on Video Options Page");
         if(driver == null){
             System.out.println("Driver is null");
         }else{

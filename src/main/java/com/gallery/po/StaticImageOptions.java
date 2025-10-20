@@ -12,7 +12,7 @@ public class StaticImageOptions extends BasePage{
     // Driver instanciation
     public StaticImageOptions(AndroidDriver driver) {
         super(driver);
-        System.out.println("I'm on Folders Page");
+        System.out.println("I'm on Static Image Options Page");
         if(driver == null){
             System.out.println("Driver is null");
         }else{

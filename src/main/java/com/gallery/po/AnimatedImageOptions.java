@@ -12,7 +12,7 @@ public class AnimatedImageOptions extends BasePage{
     // Driver instanciation
     public AnimatedImageOptions(AndroidDriver driver) {
         super(driver);
-        System.out.println("I'm on Folders Page");
+        System.out.println("I'm on Animated Image Options Page");
         if(driver == null){
             System.out.println("Driver is null");
         }else{

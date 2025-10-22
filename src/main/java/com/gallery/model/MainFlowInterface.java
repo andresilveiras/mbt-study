@@ -6,7 +6,7 @@ import org.graphwalker.java.annotation.Model;
 import org.graphwalker.java.annotation.Vertex;
 
 @Model(file = "modelo-gallery1.json")
-public interface MainFlow {
+public interface MainFlowInterface {
 
     @Edge()
     void e_OpenApp();

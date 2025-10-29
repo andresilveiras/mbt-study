@@ -28,7 +28,7 @@ public class Main {
             welcomePage = new OpenPage(driver);
             listFolders = new ListFolders(driver);
 
-            welcomePage.checkPermissionDialog();
+            welcomePage.allowPermissions();
             listFolders.checkFoldersPage();
             //listFolders.clickOnStaticImageFolder();
 

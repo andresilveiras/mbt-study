@@ -1,12 +1,12 @@
 package com.gallery;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
-import com.gallery.po.ListFolders;
-import com.gallery.po.OpenPage;
+import org.graphwalker.java.test.Executor;
+import org.graphwalker.java.test.Result;
+import org.graphwalker.java.test.TestExecutor;
 
-import io.appium.java_client.android.AndroidDriver;
+import com.gallery.impl.MainFlow;
 
 public class Main {
   
@@ -18,23 +18,14 @@ public class Main {
 
     public static void main(String[] args) throws IOException{
 
+        Executor executor = new TestExecutor(MainFlow.class);
+        Result result = executor.execute(true);
 
-        AndroidDriver driver; 
-        OpenPage welcomePage;
-        ListFolders listFolders;
+        if (result.hasErrors()) {
+            for (String error : result.getErrors()) {
+                System.out.println(error);
+            }
+        }
 
-        try {
-            driver = DriverRunner.createDriver();
-            welcomePage = new OpenPage(driver);
-            listFolders = new ListFolders(driver);
-
-            welcomePage.allowPermissions();
-            listFolders.checkFoldersPage();
-            //listFolders.clickOnStaticImageFolder();
-
-        } catch (MalformedURLException exc) {
-            System.out.println(exc.getCause());
-            System.out.println(exc.getMessage());
-        }  
     }
 }

@@ -6,7 +6,7 @@ import org.graphwalker.java.annotation.Model;
 import org.graphwalker.java.annotation.Vertex;
 
 @Model(file = "modelo-gallery1.json")
-public interface VideoPlayer {
+public interface VideoPlayerInterface {
 
     @Edge()
     void e_SelectSpeed();

@@ -6,31 +6,22 @@ import org.graphwalker.java.annotation.Model;
 import org.graphwalker.java.annotation.Vertex;
 
 @Model(file = "modelo-gallery1.json")
-public interface AnimatedImageOptions {
+public interface VideoOptionsInterface {
 
     @Edge()
     void e_TypeNewName();
 
     @Edge()
-    void e_ClickOnEditionIcon();
-
-    @Vertex()
-    void v_EditImage();
-
-    @Vertex()
-    void v_ShareImage();
-
-    @Edge()
     void e_GoBackFromRename();
 
-    @Edge()
-    void e_ClickOnScreen();
-
-    @Edge()
-    void e_ClickOnImage();
+    @Vertex()
+    void v_OpenVideoPlayer();
 
     @Vertex()
-    void v_RenameImage();
+    void v_RenameVideo();
+
+    @Vertex()
+    void v_EditVideo();
 
     @Edge()
     void e_ClickOnRenameIcon();
@@ -39,25 +30,34 @@ public interface AnimatedImageOptions {
     void e_ClickOnShareIcon();
 
     @Edge()
+    void e_GoBackFromPlayer();
+
+    @Vertex()
+    void v_OpenVideoOptions();
+
+    @Edge()
     void e_DiscardNewName();
 
     @Vertex()
     void v_CheckName();
 
     @Edge()
-    void e_ClickOK();
+    void e_ClickOnPlayIcon();
+
+    @Vertex()
+    void v_OpenVideoProperties();
 
     @Edge()
-    void e_ClickOnInfoIcon();
+    void e_ClickOK();
+
+    @Vertex()
+    void v_ShareVideo();
 
     @Edge()
     void e_GoBackFromSharing();
 
-    @Vertex()
-    void v_OpenImageProperties();
-
-    @Vertex()
-    void v_ViewImageFullScreen();
+    @Edge()
+    void e_ClickOnInfoIcon();
 
     @Edge()
     void e_GoBackFromEdition();
@@ -65,6 +65,6 @@ public interface AnimatedImageOptions {
     @Edge()
     void e_SaveNewName();
 
-    @Vertex()
-    void v_OpenAnimatedImage();
+    @Edge()
+    void e_ClickOnEditIcon();
 }

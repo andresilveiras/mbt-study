@@ -120,18 +120,7 @@ public class MainFlow implements MainFlowInterface {
         switch (currentFolder) {
             case "StaticImage":
                 // choose one of the static images folder randomly
-                int randomChoice = java.util.concurrent.ThreadLocalRandom.current().nextInt(1, 4);
-                switch(randomChoice){
-                    case 1: 
-                        listFolders.clickOnJpegFolder();
-                        break;
-                    case 2: 
-                        listFolders.clickOnPngFolder();
-                        break;
-                    case 3: 
-                        listFolders.clickOnWebpFolder();
-                        break;
-                }    
+                selectStaticImageFolder();  
             break;
             case "AnimatedImage":
                 listFolders.clickOnGifsFolder();
@@ -139,8 +128,6 @@ public class MainFlow implements MainFlowInterface {
             case "Video":
                 listFolders.clickOnVideosFolder();
             break;
-            default:
-                break;
         }
     }
 
@@ -158,8 +145,6 @@ public class MainFlow implements MainFlowInterface {
             case "Video":
                 listVideos.goBackFromVideos();
                 break;
-            default:
-                break;
         }
 
     }
@@ -167,38 +152,127 @@ public class MainFlow implements MainFlowInterface {
     @Override
     public void e_SelectStaticImage(){
         System.out.println("I'm on edge SELECT STATIC IMAGE");
-
+        if(currentFolder.equals("StaticImage")){
+            System.out.println("Current folder: " + currentFolder);
+            if(listStaticImages == null) listStaticImages = new ListStaticImages(driver);
+            listStaticImages.clickOnFirstItem();
+        }else{
+            System.out.println("Current folder: " + currentFolder + ".\nGoing back to select the right folder.");
+            switch(currentFolder){
+                case "AnimatedImage":
+                    if(listAnimatedImages == null) listAnimatedImages = new ListGifs(driver);
+                    listAnimatedImages.goBackFromGifImages();
+                    if(listFolders == null) listFolders = new ListFolders(driver);
+                    selectStaticImageFolder();
+                    currentFolder = "StaticImage";
+                    break;
+                case "Video":
+                    if(listVideos == null) listVideos = new ListVideos(driver);
+                    listVideos.goBackFromVideos();
+                    if(listFolders == null) listFolders = new ListFolders(driver);
+                    selectStaticImageFolder();
+                    currentFolder = "StaticImage";
+                    break;
+            }
+        }
     }
 
     @Override
     public void e_GoBackFromStaticImage(){
         System.out.println("I'm on edge GO BACK FROM STATIC IMAGE");
-
+        if(listStaticImages == null) listStaticImages = new ListStaticImages(driver);
+        listStaticImages.goBackFromStaticImages();
     }
 
     @Override
     public void e_SelectAnimatedImage(){
         System.out.println("I'm on edge SELECT ANIMATED IMAGE");
 
+        if(currentFolder.equals("AnimatedImage")){
+            System.out.println("Current folder: " + currentFolder);
+            if(listAnimatedImages == null) listAnimatedImages = new ListGifs(driver);
+            listAnimatedImages.clickOnFirstItem();
+        }else{
+            System.out.println("Current folder: " + currentFolder + ".\nGoing back to select the right folder.");
+            switch(currentFolder){
+                case "StaticImage":
+                    if(listStaticImages == null) listStaticImages = new ListStaticImages(driver);
+                    listStaticImages.goBackFromStaticImages();
+                    if(listFolders == null) listFolders = new ListFolders(driver);
+                    listFolders.clickOnGifsFolder();
+                    currentFolder = "AnimatedImage";
+                    break;
+                case "Video":
+                    if(listVideos == null) listVideos = new ListVideos(driver);
+                    listVideos.goBackFromVideos();
+                    if(listFolders == null) listFolders = new ListFolders(driver);
+                    listFolders.clickOnGifsFolder();
+                    currentFolder = "AnimatedImage";
+                    break;
+            }
+        }
     }
 
     @Override
     public void e_GoBackFromAnimatedImage(){
         System.out.println("I'm on edge GO BACK FROM ANIMATED IMAGE");
-
-    
+        if(listAnimatedImages == null) listAnimatedImages = new ListGifs(driver);
+        listAnimatedImages.goBackFromGifImages();
     }
 
     @Override
     public void e_SelectVideo(){
         System.out.println("I'm on edge SELECT VIDEO");
 
+        if(currentFolder.equals("Video")){
+            System.out.println("Current folder: " + currentFolder);
+            if(listVideos == null) listVideos = new ListVideos(driver);
+            listVideos.clickOnFirstItem();
+        }else{
+            System.out.println("Current folder: " + currentFolder + ".\nGoing back to select the right folder.");
+            switch(currentFolder){
+                case "StaticImage":
+                    if(listStaticImages == null) listStaticImages = new ListStaticImages(driver);
+                    listStaticImages.goBackFromStaticImages();
+                    if(listFolders == null) listFolders = new ListFolders(driver);
+                    listFolders.clickOnVideosFolder();
+                    currentFolder = "Video";
+                break;
+                case "AnimatedImage":
+                    if(listAnimatedImages == null) listAnimatedImages = new ListGifs(driver);
+                    listAnimatedImages.goBackFromGifImages();
+                    if(listFolders == null) listFolders = new ListFolders(driver);
+                    listFolders.clickOnVideosFolder();
+                    currentFolder = "Video";
+                break;
+            }
+            if(listVideos == null) listVideos = new ListVideos(driver);
+            listVideos.clickOnFirstItem();
+        }
     }
 
     @Override
     public void e_GoBackFromVideo(){
         System.out.println("I'm on edge GO BACK FROM VIDEO");
+        if(listVideos == null) listVideos = new ListVideos(driver);
+        listVideos.goBackFromVideos();
+    }
 
+
+    public void selectStaticImageFolder(){
+        if(listFolders == null) listFolders = new ListFolders(driver);
+        int randomChoice = java.util.concurrent.ThreadLocalRandom.current().nextInt(1, 4);
+        switch(randomChoice){
+            case 1: 
+                listFolders.clickOnJpegFolder();
+                break;
+            case 2: 
+                listFolders.clickOnPngFolder();
+                break;
+            case 3: 
+                listFolders.clickOnWebpFolder();
+                break;
+        }           
     }
 
 }

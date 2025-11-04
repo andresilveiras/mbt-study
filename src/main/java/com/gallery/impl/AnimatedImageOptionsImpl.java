@@ -1,8 +1,12 @@
 package com.gallery.impl;
 
-import com.gallery.model.AnimatedImageOptionsInterface;
+import org.graphwalker.core.machine.ExecutionContext;
+import org.graphwalker.java.annotation.GraphWalker;
 
-public class AnimatedImageOptions implements AnimatedImageOptionsInterface {
+import com.gallery.model.AnimatedImageOptions;
+
+@GraphWalker(value = "random(edge_coverage(100))")
+public class AnimatedImageOptionsImpl extends ExecutionContext implements AnimatedImageOptions {
 
     /* 
     * ******************************************* 

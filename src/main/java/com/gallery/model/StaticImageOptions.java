@@ -5,8 +5,8 @@ import org.graphwalker.java.annotation.Edge;
 import org.graphwalker.java.annotation.Model;
 import org.graphwalker.java.annotation.Vertex;
 
-@Model(file = "modelo-gallery1.json")
-public interface StaticImageOptionsInterface {
+@Model(file = "models/modelo-gallery1.json")
+public interface StaticImageOptions {
 
     @Vertex()
     void v_EditImage();

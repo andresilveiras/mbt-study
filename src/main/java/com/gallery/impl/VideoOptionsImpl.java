@@ -1,8 +1,12 @@
 package com.gallery.impl;
 
-import com.gallery.model.VideoOptionsInterface;
+import org.graphwalker.core.machine.ExecutionContext;
+import org.graphwalker.java.annotation.GraphWalker;
 
-public class VideoOptions implements VideoOptionsInterface{
+import com.gallery.model.VideoOptions;
+
+@GraphWalker(value = "random(edge_coverage(100))")
+public class VideoOptionsImpl extends ExecutionContext implements VideoOptions{
     
     /* 
     * ******************************************* 

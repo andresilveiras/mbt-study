@@ -6,7 +6,7 @@ import org.graphwalker.java.test.Executor;
 import org.graphwalker.java.test.Result;
 import org.graphwalker.java.test.TestExecutor;
 
-import com.gallery.impl.MainFlow;
+import com.gallery.impl.MainFlowImpl;
 
 public class Main {
   
@@ -18,7 +18,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException{
 
-        Executor executor = new TestExecutor(MainFlow.class);
+        Executor executor = new TestExecutor(
+            MainFlowImpl.class
+        );
+
         Result result = executor.execute(true);
 
         if (result.hasErrors()) {

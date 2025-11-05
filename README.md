@@ -85,3 +85,8 @@ Também é possível executar diretamente a main pela interface da sua IDE.
 - Modelos JSON: `src/main/resources/models`
 
 Para visualizar os modelos, faça o download dos arquivos e abra pelo GraphWalkerStudio. 
+
+## Créditos
+
+Fossify: https://github.com/FossifyOrg
+Por disponibilizar os apps utilizados no estudo.

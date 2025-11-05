@@ -2,7 +2,6 @@ package com.gallery.impl;
 
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.GraphWalker;
-
 import com.gallery.model.AnimatedImageOptions;
 
 @GraphWalker(value = "random(edge_coverage(100))")

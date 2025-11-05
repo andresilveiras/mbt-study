@@ -5,17 +5,17 @@ import java.net.MalformedURLException;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.BeforeExecution;
 import org.graphwalker.java.annotation.GraphWalker;
+import io.appium.java_client.android.AndroidDriver;
 
 import com.gallery.DriverRunner;
-import com.gallery.model.MainFlow;
+
 import com.gallery.po.ListFolders;
 import com.gallery.po.ListGifs;
 import com.gallery.po.ListStaticImages;
 import com.gallery.po.ListVideos;
 import com.gallery.po.OpenPage;
 
-import io.appium.java_client.android.AndroidDriver;
-
+import com.gallery.model.MainFlow;
 @GraphWalker(value = "random(edge_coverage(100))", start = "v_Start")
 public class MainFlowImpl extends ExecutionContext implements MainFlow {
 

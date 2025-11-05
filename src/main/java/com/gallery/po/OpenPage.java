@@ -22,22 +22,36 @@ public class OpenPage extends BasePage {
     // PAGE ELEMENTS
 
     @AndroidFindBy(id="com.android.permissioncontroller:id/content_container")
-    RemoteWebElement permissionDialog;
+    RemoteWebElement androidPermissionDialog;
 
     @AndroidFindBy(id="com.android.permissioncontroller:id/permission_allow_button")
     RemoteWebElement allowPermissionButton;
 
+
     // PAGE ACTIONS
 
-    public AndroidDriver checkPermissionDialog() {
+    public ListFolders allowPermissions() {
         System.out.println("Checking android dialog...");
-        System.out.println("first access dialog: " + permissionDialog.isEnabled());
-        if (permissionDialog.isDisplayed()) {
-            System.out.println("Closing android dialog.");
+        System.out.println("First access dialog: " + androidPermissionDialog.isEnabled());
+        if (androidPermissionDialog.isDisplayed()) {
+            System.out.println("Allowing permissions.");
             allowPermissionButton.click();
         } else {
-            System.out.println("There is no dialog to be closed.");
+            System.out.println("First access dialog is not displayed.");
+            // consider permissions are already allowed
         }
-        return driver;
+        return new ListFolders(driver);
+    }
+
+    public void rejectPermissions(){
+        System.out.println("Checking android dialog...");
+        System.out.println("First access dialog: " + androidPermissionDialog.isEnabled());
+        if (androidPermissionDialog.isDisplayed()) {
+            // do nothing, just stand on this page. otherwise the dialog don't show up again.
+            System.out.println("Don't allow permissions.");
+        } else {
+            System.out.println("First access dialog is not displayed.");
+            // consider permissions are already allowed
+        }
     }
 }

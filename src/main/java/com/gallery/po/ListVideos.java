@@ -31,7 +31,7 @@ public class ListVideos extends BasePage{
 
     // PAGE ACTIONS
 
-    // Check that is in list JPEG page --> Stay in the same page
+    // Check that is in List Videos page --> Stay in the same page
     public boolean checkVideosPage(){
         System.out.println("List Videos Page check...");
         return mediaGrid.isDisplayed();
@@ -43,7 +43,7 @@ public class ListVideos extends BasePage{
         return firstItem.isDisplayed();
     }
 
-    // Click on first item --> Go to STATIC IMAGE OPTIONS
+    // Click on first item --> Go to VIDEO OPTIONS
     public VideoOptions clickOnFirstItem(){
         System.out.println("Clicking on first Video...");
         firstItem.click();

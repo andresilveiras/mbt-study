@@ -1,4 +1,4 @@
-package com.gallery;
+package com;
 
 import java.io.IOException;
 

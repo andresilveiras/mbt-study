@@ -1,5 +1,6 @@
 package com.filemanager.po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 
@@ -42,12 +43,6 @@ public class NewFolderPage extends BasePage {
     @AndroidFindBy(id="android:id/button1")
     RemoteWebElement button_Confirm;
 
-    @AndroidFindBy(id="org.fossify.filemanager:id/top_toolbar_search")
-    RemoteWebElement textField_Search;
-
-    @AndroidFindBy(uiAutomator="new UiSelector().resourceId(\"org.fossify.filemanager:id/item_frame\").instance(0)")
-    RemoteWebElement item_FirstItem;
-
     @AndroidFindBy(id="org.fossify.filemanager:id/cab_rename")
     RemoteWebElement button_Rename;
 
@@ -71,15 +66,8 @@ public class NewFolderPage extends BasePage {
 
     public void selectFolder(String folderName){
         driver.pressKey(new KeyEvent(AndroidKey.BACK)); 
-        textField_Search.sendKeys(folderName);
-        actions.clickAndHold(item_FirstItem).perform();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        actions.release(item_FirstItem).perform();
+        RemoteWebElement folder = (RemoteWebElement)driver.findElement(By.xpath("//android.widget.TextView[@resource-id=\"org.fossify.filemanager:id/item_name\" and @text=\"" + folderName +"\"]"));
+        actions.clickAndHold(folder).perform();
     }
 
     public void renameFolder(String folderName, String newFolderName){

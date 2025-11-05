@@ -1,4 +1,4 @@
-package com;
+package com.filemanager;
 
 import java.io.IOException;
 
@@ -7,8 +7,6 @@ import org.graphwalker.java.test.Result;
 import org.graphwalker.java.test.TestExecutor;
 
 import com.filemanager.impl.FileManagerImpl;
-
-
 
 public class Main {
   

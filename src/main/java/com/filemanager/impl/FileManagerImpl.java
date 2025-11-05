@@ -7,11 +7,12 @@ import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.BeforeExecution;
 import org.graphwalker.java.annotation.GraphWalker;
 
-import com.filemanager.DriverRunner;
-import com.filemanager.model.FileManager;
 import com.filemanager.po.NewFilePage;
 import com.filemanager.po.NewFolderPage;
 import com.filemanager.po.OpenPage;
+
+import com.filemanager.model.FileManager;
+import com.filemanager.DriverRunner;
 
 import io.appium.java_client.android.AndroidDriver;
 

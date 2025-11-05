@@ -1,5 +1,6 @@
 package com.filemanager.po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebElement;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -36,12 +37,6 @@ public class OpenPage extends BasePage {
     @AndroidFindBy(id="android:id/button1")
     RemoteWebElement button_Confirm;
 
-    @AndroidFindBy(id="org.fossify.filemanager:id/top_toolbar_search")
-    RemoteWebElement textField_Search;
-
-    @AndroidFindBy(uiAutomator="new UiSelector().resourceId(\"org.fossify.filemanager:id/item_frame\").instance(0)")
-    RemoteWebElement item_FirstItem;
-
 
     // PAGE ACTIONS
 
@@ -53,15 +48,13 @@ public class OpenPage extends BasePage {
         radioButton_Directory.click();
         button_Confirm.click();
         System.out.println("Clicking on created folder: " + directoryName);
-        textField_Search.sendKeys(directoryName);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        item_FirstItem.click();
+        selectFolder(directoryName);
         return new NewFolderPage(driver);
+    }
+
+    public void selectFolder(String folderName){
+        RemoteWebElement folder = (RemoteWebElement)driver.findElement(By.xpath("//android.widget.TextView[@resource-id=\"org.fossify.filemanager:id/item_name\" and @text=\"" + folderName +"\"]"));
+        folder.click();
     }
 
 }

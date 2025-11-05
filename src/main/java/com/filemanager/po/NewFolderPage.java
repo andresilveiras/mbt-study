@@ -70,12 +70,13 @@ public class NewFolderPage extends BasePage {
         actions.clickAndHold(folder).perform();
     }
 
-    public void renameFolder(String folderName, String newFolderName){
+    public OpenPage renameFolder(String folderName, String newFolderName){
         selectFolder(folderName);
         button_Rename.click();
         textField_Rename.clear();
         textField_Rename.sendKeys(newFolderName);
         button_Confirm.click();
+        return new OpenPage(driver);
     }
 
     public OpenPage deleteFolder(String folderName){

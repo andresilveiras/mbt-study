@@ -41,7 +41,7 @@ public class NewFilePage extends BasePage {
     // PAGE ACTIONS
 
     public void selectFile(String fileName){
-        RemoteWebElement file = (RemoteWebElement)driver.findElement(By.id("org.fossify.filemanager:id/item_name"));
+        RemoteWebElement file = (RemoteWebElement)driver.findElement(By.xpath("//android.widget.TextView[@resource-id=\"org.fossify.filemanager:id/item_name\" and @text=\"" + fileName +"\"]"));
         actions.clickAndHold(file).perform();
     }
 

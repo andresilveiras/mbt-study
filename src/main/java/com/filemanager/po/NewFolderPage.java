@@ -70,13 +70,14 @@ public class NewFolderPage extends BasePage {
         actions.clickAndHold(folder).perform();
     }
 
-    public OpenPage renameFolder(String folderName, String newFolderName){
+    public void renameFolder(String folderName, String newFolderName){
         selectFolder(folderName);
         button_Rename.click();
         textField_Rename.clear();
         textField_Rename.sendKeys(newFolderName);
         button_Confirm.click();
-        return new OpenPage(driver);
+        RemoteWebElement folder = (RemoteWebElement)driver.findElement(By.xpath("//android.widget.TextView[@resource-id=\"org.fossify.filemanager:id/item_name\" and @text=\"" + newFolderName +"\"]"));
+        folder.click();
     }
 
     public OpenPage deleteFolder(String folderName){

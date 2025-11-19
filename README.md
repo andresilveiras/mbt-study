@@ -20,23 +20,11 @@ Principais pastas e arquivos:
 
 ## Tecnologias
 
-- Java (JDK 11+ recomendado)
-- Maven
-- GraphWalker
-- Appium
+- Java (JDK 21.0.5)
+- Maven (versão 3.9.8)
+- GraphWalker (versão 4.3.3)
+- Appium (versão 2.12.0)
 
-## Pré-requisitos
-
-1. Java JDK (11 ou superior)
-2. Maven (3.x)
-3. Appium
-
-Verifique as versões instaladas:
-
-```powershell
-java -version
-mvn -v
-```
 
 ## Executando os testes
 

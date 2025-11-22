@@ -73,6 +73,7 @@ public class NewFolderPage extends BasePage {
     public void renameFolder(String folderName, String newFolderName){
         selectFolder(folderName);
         button_Rename.click();
+        System.out.println("Renaming folder: " + folderName + " to: " + newFolderName);
         textField_Rename.clear();
         textField_Rename.sendKeys(newFolderName);
         button_Confirm.click();
@@ -81,6 +82,7 @@ public class NewFolderPage extends BasePage {
     }
 
     public OpenPage deleteFolder(String folderName){
+        System.out.println("Deleting folder: " + folderName);
         selectFolder(folderName);
         button_Delete.click();
         button_Confirm.click();

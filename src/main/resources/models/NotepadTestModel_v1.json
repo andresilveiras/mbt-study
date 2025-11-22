@@ -1,0 +1,128 @@
+{
+    "models": [
+        {
+            "edges": [
+                {
+                    "id": "cb2d90e1-a565-44ef-8b79-b05d657b344d",
+                    "name": "e_ViewListNotes",
+                    "sourceVertexId": "3d696108-7e2a-4073-9343-3da61c7993f2",
+                    "targetVertexId": "f38560ab-c2e8-4519-9c25-97ada717ec3e"
+                },
+                {
+                    "id": "039da7a8-de82-4681-960b-201e4589f6ef",
+                    "name": "e_CreateNote",
+                    "sourceVertexId": "f38560ab-c2e8-4519-9c25-97ada717ec3e",
+                    "targetVertexId": "86afb4dc-8e68-4214-976c-8b73cc4ce08a"
+                },
+                {
+                    "id": "0dcaeb4b-8e98-4f2a-8098-a8d5dc9e96a0",
+                    "name": "e_GoBackFromCreation",
+                    "sourceVertexId": "86afb4dc-8e68-4214-976c-8b73cc4ce08a",
+                    "targetVertexId": "f38560ab-c2e8-4519-9c25-97ada717ec3e"
+                },
+                {
+                    "id": "530b5435-a3ec-4e8b-bd1d-6d764a5a50fe",
+                    "name": "e_DiscardNewNote",
+                    "sourceVertexId": "86afb4dc-8e68-4214-976c-8b73cc4ce08a",
+                    "targetVertexId": "f38560ab-c2e8-4519-9c25-97ada717ec3e"
+                },
+                {
+                    "id": "82361579-575c-4922-8975-03699c9a7fd6",
+                    "name": "e_SelectNote",
+                    "sourceVertexId": "f38560ab-c2e8-4519-9c25-97ada717ec3e",
+                    "targetVertexId": "c71e04fb-39d0-45b4-9442-92b2cd7bbea6"
+                },
+                {
+                    "id": "acbf1f0d-5dd9-44b3-b778-76d7c3b3e8d3",
+                    "name": "e_GoBackFromDetails",
+                    "sourceVertexId": "c71e04fb-39d0-45b4-9442-92b2cd7bbea6",
+                    "targetVertexId": "f38560ab-c2e8-4519-9c25-97ada717ec3e"
+                },
+                {
+                    "id": "1fd4d15e-953a-43fc-abd1-e00751aadc31",
+                    "name": "e_DeleteSelectedNote",
+                    "sourceVertexId": "c71e04fb-39d0-45b4-9442-92b2cd7bbea6",
+                    "targetVertexId": "f38560ab-c2e8-4519-9c25-97ada717ec3e"
+                },
+                {
+                    "id": "216c0968-1804-4c13-aa85-7a1872ed95cd",
+                    "name": "e_EditNote",
+                    "sourceVertexId": "c71e04fb-39d0-45b4-9442-92b2cd7bbea6",
+                    "targetVertexId": "9132dc5f-bafb-4d14-b90e-452715233f27"
+                },
+                {
+                    "id": "ddd0240e-e00a-4d22-9204-a05d3e505179",
+                    "name": "e_SaveNewNote",
+                    "sourceVertexId": "86afb4dc-8e68-4214-976c-8b73cc4ce08a",
+                    "targetVertexId": "c71e04fb-39d0-45b4-9442-92b2cd7bbea6"
+                },
+                {
+                    "id": "2aa304de-3988-476a-b641-b56f58d91354",
+                    "name": "e_SaveEditedNote",
+                    "sourceVertexId": "9132dc5f-bafb-4d14-b90e-452715233f27",
+                    "targetVertexId": "c71e04fb-39d0-45b4-9442-92b2cd7bbea6"
+                },
+                {
+                    "id": "7182c312-9bad-43e3-beec-89426e2eb0aa",
+                    "name": "e_DeleteEditedNote",
+                    "sourceVertexId": "9132dc5f-bafb-4d14-b90e-452715233f27",
+                    "targetVertexId": "f38560ab-c2e8-4519-9c25-97ada717ec3e"
+                },
+                {
+                    "id": "5f1d31b2-06b4-41b5-9085-e6467461a724",
+                    "name": "e_GoBackFromEdition",
+                    "sourceVertexId": "9132dc5f-bafb-4d14-b90e-452715233f27",
+                    "targetVertexId": "f38560ab-c2e8-4519-9c25-97ada717ec3e"
+                }
+            ],
+            "generator": "random(edge_coverage(100))",
+            "id": "06685e59-f723-45d0-afa0-50548455eeb2",
+            "name": "NotepadTest",
+            "startElementId": "3d696108-7e2a-4073-9343-3da61c7993f2",
+            "vertices": [
+                {
+                    "id": "3d696108-7e2a-4073-9343-3da61c7993f2",
+                    "name": "v_Start",
+                    "properties": {
+                        "x": 51.5,
+                        "y": 253.4495140020798
+                    }
+                },
+                {
+                    "id": "f38560ab-c2e8-4519-9c25-97ada717ec3e",
+                    "name": "v_ListNotes",
+                    "properties": {
+                        "x": 341.3483361082284,
+                        "y": 252.9957165984946
+                    }
+                },
+                {
+                    "id": "86afb4dc-8e68-4214-976c-8b73cc4ce08a",
+                    "name": "v_NewNote",
+                    "properties": {
+                        "x": 237.49721491732453,
+                        "y": 34
+                    }
+                },
+                {
+                    "id": "c71e04fb-39d0-45b4-9442-92b2cd7bbea6",
+                    "name": "v_NoteDetails",
+                    "properties": {
+                        "x": 547.8530555337312,
+                        "y": 91.74163720439083
+                    }
+                },
+                {
+                    "id": "9132dc5f-bafb-4d14-b90e-452715233f27",
+                    "name": "v_NoteEdition",
+                    "properties": {
+                        "x": 652.3452155329861,
+                        "y": 310.4255346200099
+                    }
+                }
+            ]
+        }
+    ],
+    "selectedModelIndex": 0,
+    "selectedElementId": null
+}

@@ -31,7 +31,7 @@ public class DriverRunner {
         // Now the SUT - system under test - capabilities
 
         //this is the path of where the SUT is located in your machine, not in the device
-        String appPath = "Documents/GitHub/pilot-appium-graphwalker/appium/src/main/resources/notepad.apk";
+        String appPath = "Documents/GitHub/mbt-study/src/main/resources/notepad.apk";
         String appPackage = "com.farmerbb.notepad";
         String appActivity1 = "com.farmerbb.notepad.android.NotepadActivity";
 
